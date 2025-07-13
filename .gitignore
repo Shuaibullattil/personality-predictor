@@ -7,4 +7,4 @@ venv/
 .env/
 
 # Ignore model files (optional)
-*.pkl
+# *.pkl
