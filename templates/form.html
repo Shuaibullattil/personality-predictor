@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Personality Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Question Screen -->
+        <div id="question-screen">
+            <div class="header">
+                <h1>🧠 Personality Predictor</h1>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div id="question-counter">Question 1 of 7</div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-icon" id="question-icon">🕐</div>
+                <div class="question-text" id="question-text">How many hours do you spend alone daily?</div>
+                <div class="answer-options" id="answer-options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="nav-btn" id="prev-btn" onclick="previousQuestion()" disabled>← Previous</button>
+                <button class="nav-btn" id="next-btn" onclick="nextQuestion()" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Analyzing your personality...</div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="result-screen">
+            <h2 class="result-title">🎉 Your Personality Type</h2>
+            <div id="personality-type" class="personality-type">INTROVERT</div>
+            
+            <div class="personality-facts">
+                <div id="personality-facts-content">
+                    <!-- Facts will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="continue-btn" onclick="resetQuiz()">
+                🔄 Take Another Test
+            </button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
